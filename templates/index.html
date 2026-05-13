@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinner Suggestion</title>
+</head>
+<body>
+    <h1>Dinner Suggestion:</h1>
+    <p>Main Dish: {{ main }}</p>
+    <p>Side Dish: {{ side }}</p>
+    <p>Dessert  : {{ dessert }}</p>
+
+    <button onclick="window.location.reload();">Generate New Suggestion</button>
+
+    <form method="POST" action="/save">
+        <input type="hidden" name="main" value="{{ main }}">
+        <input type="hidden" name="side" value="{{ side }}">
+        <input type="hidden" name="dessert" value="{{ dessert }}">
+        <button type="submit">Save to DB</button>
+    </form>
+</body>
+</html>
